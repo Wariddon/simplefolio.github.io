@@ -57,21 +57,26 @@
 		
 		
 		$('#sstock').click(function() {
-			console.log("Search");
+		
+			if($('#stockname').val() != null && $('#stockname').val() != '') {
+				console.log("Search");
 
-			var url011 = 'https://marketdata.set.or.th/mkt/stockquotation.do?symbol='+$('#stockname').val().trim().toUpperCase()+'&language=th&country=TH'	 ; 
-			var url012 = 'https://www.set.or.th/set/factsheet.do?symbol='+$('#stockname').val().trim().toUpperCase()+'&ssoPageId=3&language=th&country=TH'	 ; 
-			var url021 = "https://stock.gapfocus.com/detail/"+$('#stockname').val().trim().toUpperCase();
-			var url031 = 'https://www.tradingview.com/symbols/SET-'+$('#stockname').val().trim().toUpperCase();
-			var url041 = 'http://www.hoonstation.com/stock_'+$('#stockname').val().trim().toUpperCase();
-			$('#resultsstock').html(
-				"<label for='stockname'>ต้องการหาจาก? </label> <br>"+
-				"<a href='"+url011+"' target='_blank'> https://marketdata.set.or.th</a> <br>"+
-				"<a href='"+url012+"' target='_blank'> สรุปข้อสนเทศบริษัทจดทะเบียน </a> <br>"+
-				"<a href='"+url021+"' target='_blank'> https://stock.gapfocus.com</a> <br>"+
-				"<a href='"+url031+"' target='_blank'> https://www.tradingview.com</a> <br>"+
-				"<a href='"+url041+"' target='_blank'> http://www.hoonstation.com</a> <br>"
-			);
+				var url011 = 'https://marketdata.set.or.th/mkt/stockquotation.do?symbol='+$('#stockname').val().trim().toUpperCase()+'&language=th&country=TH'	 ; 
+				var url012 = 'https://www.set.or.th/set/factsheet.do?symbol='+$('#stockname').val().trim().toUpperCase()+'&ssoPageId=3&language=th&country=TH'	 ; 
+				var url021 = "https://stock.gapfocus.com/detail/"+$('#stockname').val().trim().toUpperCase();
+				var url031 = 'https://www.tradingview.com/symbols/SET-'+$('#stockname').val().trim().toUpperCase();
+				var url041 = 'http://www.hoonstation.com/stock_'+$('#stockname').val().trim().toUpperCase();
+				$('#resultsstock').html(
+					"<label for='stockname'>ต้องการหาจาก? </label> <br>"+
+					"<a href='"+url011+"' target='_blank'> https://marketdata.set.or.th</a> <br>"+
+					"<a href='"+url012+"' target='_blank'> สรุปข้อสนเทศบริษัทจดทะเบียน </a> <br>"+
+					"<a href='"+url021+"' target='_blank'> https://stock.gapfocus.com</a> <br>"+
+					"<a href='"+url031+"' target='_blank'> https://www.tradingview.com</a> <br>"+
+					"<a href='"+url041+"' target='_blank'> http://www.hoonstation.com</a> <br>"
+				);
+			}else {
+				alert("กรอกข้อมูลที่ต้องการค้นหา");
+			}
 		});
 	});
 	
